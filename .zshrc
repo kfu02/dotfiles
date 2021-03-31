@@ -1,6 +1,7 @@
 # lazy aliases
 alias sl='ls'
-alias v='vim'
+# alias v='vim'
+alias v='a -e vim'
 alias python='python3'
 alias py='python'
 
@@ -8,11 +9,11 @@ alias py='python'
 case `uname` in
   Darwin)
     # commands for OS X go here
-    alias o='open'
+    alias o='a -e open'
   ;;
   Linux)
     # commands for Linux go here
-    alias o='xdg-open'
+    alias o='a -e xdg-open'
     alias open='o'
   ;;
 esac
