@@ -1,6 +1,13 @@
 # dotfile-backup
 
-A repo to backup my dotfiles.
+A repo to backup my dotfiles. Currently includes:
+
+```
+.vimrc
+.zshrc
+```
+
+and a script (./link.zsh) to auto-link the relevant dotfiles on my system.
 
 ## Terminal Theme Installs
 
