@@ -90,6 +90,9 @@ set relativenumber
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" start blank files in insert mode
+au BufNewFile * startinsert
+
 " use 4 spaces instead of tabs during formatting
 set expandtab
 set tabstop=4
