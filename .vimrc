@@ -101,7 +101,7 @@ set softtabstop=4
 set ignorecase
 set smartcase
 
-" press enter to toggle highlighting search results
+" toggle search highlighting with enter
 :noremap <CR> :set hlsearch! hlsearch?<CR>
 
 " Maintain undo history between sessions
