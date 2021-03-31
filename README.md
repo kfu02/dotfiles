@@ -22,7 +22,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 
 ### Tomorrow-Night-Eighties
 
-[(MacOS)](https://github.com/chriskempson/tomorrow-theme/tree/master/OS%20X%20Terminal)/
+[(MacOS)](https://github.com/chriskempson/tomorrow-theme/tree/master/OS%20X%20Terminal) /
 [(GNOME)](https://github.com/aaron-williamson/base16-gnome-terminal)
 
 *Color theme to work with Pure & match vim-hybrid.*
