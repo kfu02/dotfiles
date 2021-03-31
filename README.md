@@ -2,7 +2,7 @@
 
 A repo to backup my dotfiles.
 
-## Terminal Theme
+## Terminal Theme Installs
 
 [Pure](https://github.com/sindresorhus/pure):
 Main terminal style.
@@ -19,6 +19,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 ```
 
 [(MacOS) tmrw-night-80s](https://github.com/chriskempson/tomorrow-theme/tree/master/OS%20X%20Terminal)
+
 [(GNOME) tmrw-night-80s](https://github.com/aaron-williamson/base16-gnome-terminal)
 Color theme to work with Pure & match vim-hybrid.
 ```
