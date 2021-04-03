@@ -56,6 +56,12 @@ Plug 'nprindle/lc3.vim'
 " cursor switching
 Plug 'wincent/terminus'
 
+" surround words in brackets/quotes/tags/etc.
+Plug 'tpope/vim-surround'
+
+" repeat last command, even if it's from a plugin
+Plug 'tpope/vim-repeat'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
