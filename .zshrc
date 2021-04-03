@@ -1,7 +1,8 @@
 # lazy aliases
 alias sl='ls'
-# alias v='vim'
-alias v='a -e vim'
+alias v='vim'
+# alias v='a -e vim'
+# alias v='f -t -e vim -b viminfo'
 alias python='python3'
 alias py='python'
 
