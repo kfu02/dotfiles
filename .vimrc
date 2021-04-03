@@ -117,12 +117,12 @@ set smartcase
 set undofile
 set undodir=~/.vim/undodir
 
-" (Shift)Tab (de)indents code (insert only)
-" inoremap <S-Tab> <C-d>
-
 " keep visual highlights on indent (>) and unindent (<)
 vnoremap > >gv
 vnoremap < <gv
+
+" redo with U instead of Ctrl+R
+nnoremap U <C-R>
 
 " By default, Vim doesn't let you hide a buffer (i.e. have a buffer that isn't
 " shown in any window) that has unsaved changes. This is to prevent you from "
