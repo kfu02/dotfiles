@@ -124,6 +124,10 @@ vnoremap < <gv
 " redo with U instead of Ctrl+R
 nnoremap U <C-R>
 
+" map Shift-Tab to go back in cursor history 
+"   Tab   = <C-I> = go fwd
+" <S-Tab> = <C-O> = go bck
+nnoremap <S-Tab> <C-O> 
 " By default, Vim doesn't let you hide a buffer (i.e. have a buffer that isn't
 " shown in any window) that has unsaved changes. This is to prevent you from "
 " forgetting about unsaved changes and then quitting e.g. via `:qa!`. We find
