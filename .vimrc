@@ -62,6 +62,10 @@ Plug 'tpope/vim-surround'
 " repeat last command, even if it's from a plugin
 Plug 'tpope/vim-repeat'
 
+" status bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -73,6 +77,10 @@ call plug#end()
 " colorscheme
 set background=dark
 colorscheme hybrid 
+" let g:airline_theme='hybrid'
+" let g:airline_theme='base16'
+" let g:airline_theme='hybridline'
+let g:airline_theme='deus'
 
 " syntax highlighting
 syntax on 
@@ -89,6 +97,11 @@ autocmd ColorScheme * highlight CursorLineNr cterm=bold term=bold gui=bold
 " line number
 set number
 set relativenumber
+
+" typewriter mode breaks HML, sucks
+" typewriter mode
+" (current line stays in center of screen)
+" set scrolloff=999
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
