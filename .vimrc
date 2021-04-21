@@ -1,32 +1,5 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-" Basic
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Not vi-compatible
-set nocompatible 
-
-" Disable the default Vim startup message.
-set shortmess+=I
-
-" Backspace over anything
-set backspace=indent,eol,start
-
-" Always show the status line at the bottom, even if you only have one window open.
-set laststatus=2
-
-" Unbind some useless/annoying default key bindings.
-nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
-
-" Disable audible bell because it's annoying.
-set noerrorbells visualbell t_vb=
-
-" Enable mouse support
-set mouse+=a
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
 " Plugins
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -44,7 +17,9 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'preservim/nerdtree' 
 
 " tab completion
-Plug 'ervandew/supertab' 
+" Plug 'ervandew/supertab' 
+" Plug 'ycm-core/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 
 " autoformat 
 Plug 'Chiel92/vim-autoformat' 
@@ -129,7 +104,7 @@ set relativenumber
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-" General
+" Misc
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -138,6 +113,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" use YCM signature help
+" https://github.com/ycm-core/YouCompleteMe#signature-help
+let g:ycm_auto_trigger = 1
 
 " start blank files in insert mode
 au BufNewFile * startinsert
@@ -194,3 +173,31 @@ inoremap <Left>  <ESC>:echoe "Use h"<CR>
 inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" Basic
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Not vi-compatible
+set nocompatible 
+
+" Disable the default Vim startup message.
+set shortmess+=I
+
+" Backspace over anything
+set backspace=indent,eol,start
+
+" Always show the status line at the bottom, even if you only have one window open.
+set laststatus=2
+
+" Unbind some useless/annoying default key bindings.
+nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
+
+" Disable audible bell because it's annoying.
+set noerrorbells visualbell t_vb=
+
+" Enable mouse support
+set mouse+=a
+
