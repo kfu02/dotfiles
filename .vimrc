@@ -16,6 +16,9 @@ Plug 'drewtempelmeyer/palenight.vim'
 " file tree in Vim
 Plug 'preservim/nerdtree' 
 
+" undo tree
+Plug 'mbbill/undotree'
+
 " tab completion (see below)
 " fuzzy complete
 Plug 'maralla/completor.vim'
@@ -26,12 +29,6 @@ Plug 'kyouryuukunn/completor-necovim'
 " basic complete
 " Plug 'ervandew/supertab' 
 
-" autoformat 
-Plug 'Chiel92/vim-autoformat' 
-" note: must install external packages
-" INSTALLED:
-" js-beautify - js, JSON
-
 " lc3 syntax highlighting (CS 2110)
 Plug 'nprindle/lc3.vim'
 
@@ -39,7 +36,7 @@ Plug 'nprindle/lc3.vim'
 Plug 'wincent/terminus'
 
 " surround words in brackets/quotes/tags/etc.
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
 
 " repeat last command, even if it's from a plugin
 Plug 'tpope/vim-repeat'
