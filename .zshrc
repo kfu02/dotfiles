@@ -5,6 +5,7 @@ alias v='vim'
 # alias v='f -t -e vim -b viminfo'
 alias python='python3'
 alias py='python'
+alias pip='python -m pip'
 
 # OS-specific aliases
 case `uname` in
