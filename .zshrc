@@ -23,7 +23,13 @@ case `uname` in
   ;;
 esac
 
-# setup pure theme
+# pure theme
+#
+# install:
+# mkdir -p "$HOME/.zsh"
+# git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+#
+# config:
 fpath+=$HOME/.zsh/pure
 
 autoload -U promptinit; promptinit
@@ -36,8 +42,11 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 # frecency tab-complete
-eval "$(fasd --init auto)"
+# eval "$(fasd --init auto)"
 
+# replaced with z
+# download: https://raw.githubusercontent.com/rupa/z/master/z.sh
+. ~/z.sh
 # Use emacs keybindings even if our EDITOR is set to vi
 # bindkey -e
 
