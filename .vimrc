@@ -80,16 +80,16 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Use tab to trigger auto completion.  Default suggests completions as you type.
-" let g:completor_auto_trigger = 0
-" inoremap <expr> <Tab> Tab_Or_Complete()
+let g:completor_auto_trigger = 0
+inoremap <expr> <Tab> Tab_Or_Complete()
 
 " Completor Actions
 " d - Jump to definition - completor#do('definition')
 " c - Show documentation - completor#do('doc')
 " f - Format code        - completor#do('format')
 " s - Hover info         - (lsp hover) completor#do('hover')
-noremap <silent> <leader>d :call completor#do('definition')<CR>
-noremap <silent> <leader>c :call completor#do('doc')<CR>
+" noremap <silent> <leader>d :call completor#do('definition')<CR>
+" noremap <silent> <leader>c :call completor#do('doc')<CR>
 " noremap <silent> <leader>f :call completor#do('format')<CR>
 " noremap <silent> <leader>s :call completor#do('hover')<CR>
 
@@ -191,6 +191,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" open splits on right/bot
+set splitright
+set splitbelow
 
 " use YCM signature help
 " https://github.com/ycm-core/YouCompleteMe#signature-help
