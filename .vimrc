@@ -12,6 +12,7 @@ call plug#begin()
 Plug 'w0ng/vim-hybrid' 
 Plug 'joshdick/onedark.vim'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'https://gitlab.com/aimebertrand/timu-spacegrey.git'
 
 " file tree in Vim
 Plug 'preservim/nerdtree' 
@@ -42,6 +43,8 @@ Plug 'wincent/terminus'
 Plug 'tpope/vim-repeat'
 
 " status bar
+Plug 'itchyny/lightline.vim'
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -126,19 +129,20 @@ if (empty($TMUX))
   endif
 endif
 
+" to see all lightline colorschemes
+" :h g:lightline.colorscheme
+let g:lightline = {
+   \ 'colorscheme': 'wombat',
+   \ }
+
 " hybrid colorscheme
-set background=dark
 colorscheme hybrid 
-let g:airline_theme='deus'
 
 " one-dark colorscheme (see Plug 'onedark.vim' above)
 " colorscheme onedark
-" let g:airline_theme='onedark'
 
 " palenight colorscheme 
-" set background=dark
 " colorscheme palenight
-" let g:airline_theme="palenight"
 
 " syntax highlighting
 syntax on 
@@ -196,10 +200,6 @@ nnoremap <C-H> <C-W><C-H>
 set splitright
 set splitbelow
 
-" use YCM signature help
-" https://github.com/ycm-core/YouCompleteMe#signature-help
-" let g:ycm_auto_trigger = 1
-
 " start blank files in insert mode
 au BufNewFile * startinsert
 
@@ -240,21 +240,17 @@ nnoremap <S-Tab> <C-O>
 " for more information on this.
 set hidden
 
-" Try to prevent bad habits like using the arrow keys for movement. This is
-" not the only possible bad habit. For example, holding down the h/j/k/l keys
-" for movement, rather than using more efficient movement commands, is also a
-" bad habit. The former is enforceable through a .vimrc, while we don't know
-" how to prevent the latter.
+" Prevent using arrow keys for movement
 " Do this in normal mode...
-nnoremap <Left>  :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up>    :echoe "Use k"<CR>
-nnoremap <Down>  :echoe "Use j"<CR>
+" nnoremap <Left>  :echoe "Use h"<CR>
+" nnoremap <Right> :echoe "Use l"<CR>
+" nnoremap <Up>    :echoe "Use k"<CR>
+" nnoremap <Down>  :echoe "Use j"<CR>
 " ...and in insert mode
-inoremap <Left>  <ESC>:echoe "Use h"<CR>
-inoremap <Right> <ESC>:echoe "Use l"<CR>
-inoremap <Up>    <ESC>:echoe "Use k"<CR>
-inoremap <Down>  <ESC>:echoe "Use j"<CR>
+" inoremap <Left>  <ESC>:echoe "Use h"<CR>
+" inoremap <Right> <ESC>:echoe "Use l"<CR>
+" inoremap <Up>    <ESC>:echoe "Use k"<CR>
+" inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
