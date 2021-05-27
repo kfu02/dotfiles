@@ -10,9 +10,9 @@ call plug#begin()
 
 " colorscheme
 Plug 'w0ng/vim-hybrid' 
-Plug 'joshdick/onedark.vim'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'https://gitlab.com/aimebertrand/timu-spacegrey.git'
+" Plug 'joshdick/onedark.vim'
+" Plug 'drewtempelmeyer/palenight.vim'
+" Plug 'https://gitlab.com/aimebertrand/timu-spacegrey.git'
 
 " file tree in Vim
 Plug 'preservim/nerdtree' 
@@ -137,12 +137,6 @@ let g:lightline = {
 
 " hybrid colorscheme
 colorscheme hybrid 
-
-" one-dark colorscheme (see Plug 'onedark.vim' above)
-" colorscheme onedark
-
-" palenight colorscheme 
-" colorscheme palenight
 
 " syntax highlighting
 syntax on 
