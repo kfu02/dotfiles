@@ -136,6 +136,7 @@ let g:lightline = {
    \ }
 
 " hybrid colorscheme
+set background=dark
 colorscheme hybrid 
 
 " syntax highlighting
