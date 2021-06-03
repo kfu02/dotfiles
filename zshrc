@@ -1,6 +1,7 @@
 # lazy aliases
 alias sl='ls'
-alias v='vim'
+alias v='nvim'
+alias -g nvrc='~/.config/nvim/init.vim'
 # alias v='a -e vim'
 # alias v='f -t -e vim -b viminfo'
 alias python='python3'
