@@ -128,9 +128,17 @@ nnoremap U <C-R>
 " <S-Tab> = <C-O> = go bck
 nnoremap <S-Tab> <C-O> 
 
-" Set coc.nvim's scroll to Tab and Shift-Tab (insert mode)
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" CoC scroll through completions with Tab and Shift-Tab
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 " Enable mouse support
 set mouse+=a
