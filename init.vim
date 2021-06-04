@@ -21,8 +21,13 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 " Status bar
 Plug 'itchyny/lightline.vim'
 
-" Make your Vim/Neovim as smart as VSCode.
+" VSCode-style code completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Fuzzy file finding
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'ggreer/the_silver_searcher'
 
 " File tree
 Plug 'preservim/nerdtree'
