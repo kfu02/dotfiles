@@ -4,6 +4,8 @@ let g:lc3_detect_asm = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " Plugins
+" 
+" requires CLI install: https://github.com/junegunn/vim-plug
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -15,18 +17,20 @@ Plug 'arzg/vim-substrata'
 Plug 'w0ng/vim-hybrid'
 
 " Indent lines
-Plug 'Yggdroot/indentLine'
-Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'Yggdroot/indentLine'
+" Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Status bar
 Plug 'itchyny/lightline.vim'
 
 " VSCode-style code completion
+" requires nodeJS (CLI install)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Fuzzy file finding
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+" requires CLI install
 Plug 'ggreer/the_silver_searcher'
 
 " File tree
@@ -76,6 +80,10 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+" https://stackoverflow.com/questions/10746750/set-vim-bracket-highlighting-colors
+" Set sensible highlight matches that don't obscure the text
+hi MatchParen gui=underline guifg=none
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " Splits
@@ -102,6 +110,9 @@ set splitbelow
 " but case-sensitive when any caps included
 set ignorecase
 set smartcase
+
+" Set search highlighting off by default
+:set nohlsearch
 
 " Toggle search highlighting with enter
 :noremap <CR> :set hlsearch! hlsearch?<CR>
