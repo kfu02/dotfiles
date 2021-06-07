@@ -82,7 +82,7 @@ set softtabstop=4
 
 " https://stackoverflow.com/questions/10746750/set-vim-bracket-highlighting-colors
 " Set sensible highlight matches that don't obscure the text
-hi MatchParen gui=underline guifg=none
+hi MatchParen gui=underline guifg=none guibg=bg
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
