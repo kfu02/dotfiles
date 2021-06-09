@@ -114,9 +114,13 @@ set smartcase
 "  - syntax highlighting
 "  - no bells
 "  - backspace over anything
-"  - undo directory
+"  - undodir
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Persistent undo 
+" (nvim has default undodir)
+set undofile
 
 " Start blank files in insert mode
 au BufNewFile * startinsert
