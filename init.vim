@@ -60,12 +60,26 @@ set termguicolors " Only needed in terminals
 colorscheme substrata
 colorscheme hybrid
 
-" Lightline
-" (to see all lightline colorschemes)
-" :h g:lightline.colorscheme
+" Lightline (status bar)
+" :h g:lightline.colorscheme (to see all lightline colorschemes)
 let g:lightline = {
-   \ 'colorscheme': 'wombat',
-   \ }
+    \ 'colorscheme': 'wombat',
+    \ 'component_function': {
+    \   'filename': 'LightlineFilename',
+    \ }
+    \ }
+
+" this function makes the filename show relative to root (for git dirs)
+" supposedly this only works with vim_fugitive, but I'm using it fine without
+" https://github.com/itchyny/lightline.vim/issues/293
+function! LightlineFilename()
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
+endfunction
 
 " Line number
 set number
