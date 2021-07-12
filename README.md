@@ -1,4 +1,4 @@
-# dotfile-backup
+# dotfiles
 
 A repo to backup my dotfiles. Currently includes:
 
