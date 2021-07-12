@@ -1,24 +1,25 @@
-# lazy aliases
-alias sl='ls'
-alias v='nvim'
-alias -g nvrc='~/.config/nvim/init.vim'
-# alias v='a -e vim'
-# alias v='f -t -e vim -b viminfo'
+# python aliases
 alias python='python3'
 alias py='python'
 alias pip='python -m pip'
+
+# shell aliases
+alias ..="cd .."
+alias sl='ls'
+alias rm='rm -i'
+
+# vim aliases
+alias v='nvim'
+alias -g nvrc='~/.config/nvim/init.vim'
 
 # OS-specific aliases
 case `uname` in
   Darwin)
     # commands for OS X go here
-    # alias o='a -e open'
     alias o='open'
   ;;
   Linux)
     # commands for Linux go here
-    # alias o='a -e xdg-open'
-    # alias open='o'
     alias open='xdg-open'
     alias o='open'
   ;;
@@ -42,10 +43,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-# frecency tab-complete
-# eval "$(fasd --init auto)"
-
-# replaced with z
+# fasd replaced with z
 # download: https://raw.githubusercontent.com/rupa/z/master/z.sh
 . ~/z.sh
 # Use emacs keybindings even if our EDITOR is set to vi
