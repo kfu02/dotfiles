@@ -57,7 +57,7 @@ call plug#end()
 " Colorscheme
 " Editor
 set termguicolors " Only needed in terminals
-colorscheme substrata
+" colorscheme substrata
 colorscheme hybrid
 
 " Lightline (status bar)

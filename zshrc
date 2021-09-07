@@ -9,7 +9,8 @@ alias sl='ls'
 alias rm='rm -i'
 
 # vim aliases
-alias v='nvim'
+# alias v='nvim'
+# alias vim='nvim'
 alias -g nvrc='~/.config/nvim/init.vim'
 
 # OS-specific aliases
