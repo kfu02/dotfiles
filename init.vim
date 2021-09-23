@@ -27,24 +27,11 @@ Plug 'itchyny/lightline.vim'
 " requires nodeJS (CLI install)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Fuzzy file finding
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-" requires CLI install
-Plug 'ggreer/the_silver_searcher'
-
-" File tree
-Plug 'preservim/nerdtree'
-
 " Undo tree
 Plug 'mbbill/undotree'
 
 " LC3 syntax highlighting (CS 2110)
 Plug 'nprindle/lc3.vim'
-
-" Devicons {{{
-Plug 'ryanoasis/vim-devicons'
-Plug 'kyazdani42/nvim-web-devicons'
 
 call plug#end()
 
