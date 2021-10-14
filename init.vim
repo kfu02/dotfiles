@@ -78,6 +78,18 @@ endfunction
 set number
 set relativenumber
 
+" https://stackoverflow.com/questions/10746750/set-vim-bracket-highlighting-colors
+" Set sensible highlight matches that don't obscure the text
+hi MatchParen gui=underline guifg=none guibg=bg
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" Formatting
+"
+" gq<motion> to format everything from current cursor to <motion>
+" e.g. gg then gqG to format full file
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indent line
 let g:indentLine_char='│'
 
@@ -86,10 +98,6 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-
-" https://stackoverflow.com/questions/10746750/set-vim-bracket-highlighting-colors
-" Set sensible highlight matches that don't obscure the text
-hi MatchParen gui=underline guifg=none guibg=bg
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
