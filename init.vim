@@ -12,8 +12,6 @@ let g:lc3_detect_asm = 1
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 " Colorschemes
-" Plug 'junegunn/seoul256.vim'
-Plug 'arzg/vim-substrata'
 Plug 'w0ng/vim-hybrid'
 
 " Indent lines
@@ -33,6 +31,9 @@ Plug 'mbbill/undotree'
 " LC3 syntax highlighting (CS 2110)
 Plug 'nprindle/lc3.vim'
 
+" Atom One Dark/Light theme
+Plug 'rakr/vim-one'
+
 call plug#end()
 
 
@@ -41,11 +42,16 @@ call plug#end()
 " Appearance
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Colorscheme
-" Editor
 set termguicolors " Only needed in terminals
-" colorscheme substrata
+
+" Hybrid colorscheme (see plug above)
 colorscheme hybrid
+set background=dark " for the dark version
+
+" Atom one-light for lab (see above)
+" colorscheme one
+" set background=dark " for the dark version
+" set background=light " for the light version
 
 " Lightline (status bar)
 " :h g:lightline.colorscheme (to see all lightline colorschemes)
