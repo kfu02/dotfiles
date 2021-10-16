@@ -1,13 +1,13 @@
-# dotfile-backup
+# dotfiles
 
 A repo to backup my dotfiles. Currently includes:
 
 ```
-.vimrc
+init.vim
 .zshrc
 ```
 
-and a script (./link.zsh) to auto-link the relevant dotfiles on my system.
+and a script (./link.zsh) to auto-link the relevant dotfiles on my system. (I switched from vim to neovim. TODO: delete vimrc.)
 
 ## Terminal Theme Installs
 

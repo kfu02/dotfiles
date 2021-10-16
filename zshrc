@@ -1,30 +1,3 @@
-# aliases
-alias sl='ls'
-alias v='nvim'
-alias -g nvrc='~/.config/nvim/init.vim'
-# alias v='a -e vim'
-# alias v='f -t -e vim -b viminfo'
-alias python='python3'
-alias py='python'
-alias pip='python -m pip'
-alias rm='rm -i'
-
-# OS-specific aliases
-case `uname` in
-  Darwin)
-    # commands for OS X go here
-    # alias o='a -e open'
-    alias o='open'
-  ;;
-  Linux)
-    # commands for Linux go here
-    # alias o='a -e xdg-open'
-    # alias open='o'
-    alias open='xdg-open'
-    alias o='open'
-  ;;
-esac
-
 # pure theme
 #
 # install:
@@ -43,17 +16,11 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-# frecency tab-complete
-# eval "$(fasd --init auto)"
-
-# replaced with z
+# fasd replaced with z
 # download: https://raw.githubusercontent.com/rupa/z/master/z.sh
 . ~/z.sh
 # Use emacs keybindings even if our EDITOR is set to vi
 # bindkey -e
-
-# use Vi keybindings on the command line
-bindkey -v
 
 # Use modern completion system
 autoload -Uz compinit
@@ -96,5 +63,54 @@ case `uname` in
   Linux)
     # commands for Linux go here
     source /home/kfu/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  ;;
+esac
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/kevinfu/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/kevinfu/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/kevinfu/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/kevinfu/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# python aliases
+alias python='python3'
+# alias py='python'
+alias pip='python -m pip'
+
+# shell aliases
+alias ..="cd .."
+alias sl='ls'
+alias rm='rm -i'
+
+# vim aliases
+# alias v='nvim'
+# alias vim='nvim'
+alias -g nvrc='~/.config/nvim/init.vim'
+
+# use Vi keybindings on the command line
+bindkey -v
+
+# for pattern search (the wildcard `*` will use zsh completion)
+bindkey '^R' history-incremental-pattern-search-backward
+
+# OS-specific aliases
+case `uname` in
+  Darwin)
+    # commands for OS X go here
+    alias o='open'
+  ;;
+  Linux)
+    # commands for Linux go here
+    alias open='xdg-open'
+    alias o='open'
   ;;
 esac

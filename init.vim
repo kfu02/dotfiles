@@ -12,8 +12,6 @@ let g:lc3_detect_asm = 1
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 " Colorschemes
-" Plug 'junegunn/seoul256.vim'
-Plug 'arzg/vim-substrata'
 Plug 'w0ng/vim-hybrid'
 
 " Indent lines
@@ -27,24 +25,14 @@ Plug 'itchyny/lightline.vim'
 " requires nodeJS (CLI install)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Fuzzy file finding
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-" requires CLI install
-Plug 'ggreer/the_silver_searcher'
-
-" File tree
-Plug 'preservim/nerdtree'
-
 " Undo tree
 Plug 'mbbill/undotree'
 
 " LC3 syntax highlighting (CS 2110)
 Plug 'nprindle/lc3.vim'
 
-" Devicons {{{
-Plug 'ryanoasis/vim-devicons'
-Plug 'kyazdani42/nvim-web-devicons'
+" Atom One Dark/Light theme
+Plug 'rakr/vim-one'
 
 call plug#end()
 
@@ -54,11 +42,16 @@ call plug#end()
 " Appearance
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Colorscheme
-" Editor
 set termguicolors " Only needed in terminals
-colorscheme substrata
+
+" Hybrid colorscheme (see plug above)
 colorscheme hybrid
+set background=dark " for the dark version
+
+" Atom one-light for lab (see above)
+" colorscheme one
+" set background=dark " for the dark version
+" set background=light " for the light version
 
 " Lightline (status bar)
 " :h g:lightline.colorscheme (to see all lightline colorschemes)
@@ -85,6 +78,18 @@ endfunction
 set number
 set relativenumber
 
+" https://stackoverflow.com/questions/10746750/set-vim-bracket-highlighting-colors
+" Set sensible highlight matches that don't obscure the text
+hi MatchParen gui=underline guifg=none guibg=bg
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" Formatting
+"
+" gq<motion> to format everything from current cursor to <motion>
+" e.g. gg then gqG to format full file
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indent line
 let g:indentLine_char='│'
 
@@ -93,10 +98,6 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-
-" https://stackoverflow.com/questions/10746750/set-vim-bracket-highlighting-colors
-" Set sensible highlight matches that don't obscure the text
-hi MatchParen gui=underline guifg=none guibg=bg
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
