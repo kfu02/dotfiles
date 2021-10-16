@@ -1,4 +1,4 @@
-# lazy aliases
+# aliases
 alias sl='ls'
 alias v='nvim'
 alias -g nvrc='~/.config/nvim/init.vim'
@@ -7,6 +7,7 @@ alias -g nvrc='~/.config/nvim/init.vim'
 alias python='python3'
 alias py='python'
 alias pip='python -m pip'
+alias rm='rm -i'
 
 # OS-specific aliases
 case `uname` in
