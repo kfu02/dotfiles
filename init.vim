@@ -34,6 +34,13 @@ Plug 'nprindle/lc3.vim'
 " Atom One Dark/Light theme
 Plug 'rakr/vim-one'
 
+" Telescope (fuzzy finder)
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+" Tree-sitter (telescope wants it)
+Plug 'nvim-treesitter/nvim-treesitter'
+
 call plug#end()
 
 
@@ -131,6 +138,21 @@ set smartcase
 
 " Toggle search highlighting with enter
 :noremap <CR> :set hlsearch! hlsearch?<CR>
+
+" Fuzzy finding binds (Telescope)
+let mapleader=","
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Using Lua functions
+" nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+" nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+" nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+" nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "

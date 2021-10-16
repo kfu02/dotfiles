@@ -95,6 +95,9 @@ alias rm='rm -i'
 # alias v='nvim'
 # alias vim='nvim'
 alias -g nvrc='~/.config/nvim/init.vim'
+# neovim 0.5 requires special appimage 
+# (https://github.com/neovim/neovim/releases/tag/v0.5.0)
+alias -g nvim='~/nvim.appimage'
 
 # use Vi keybindings on the command line
 bindkey -v
