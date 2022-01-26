@@ -95,9 +95,6 @@ alias rm='rm -i'
 # alias v='nvim'
 # alias vim='nvim'
 alias -g nvrc='~/.config/nvim/init.vim'
-# neovim 0.5 requires special appimage 
-# (https://github.com/neovim/neovim/releases/tag/v0.5.0)
-alias -g nvim='~/nvim.appimage'
 
 # use Vi keybindings on the command line
 bindkey -v
@@ -110,10 +107,18 @@ case `uname` in
   Darwin)
     # commands for OS X go here
     alias o='open'
+    
+    # neovim 0.5 requires special appimage 
+    # (https://github.com/neovim/neovim/releases/tag/v0.5.0)
+    alias -g nvim='~/nvim-osx64/bin/nvim'
   ;;
   Linux)
     # commands for Linux go here
     alias open='xdg-open'
     alias o='open'
+
+    # neovim 0.5 requires special appimage 
+    # (https://github.com/neovim/neovim/releases/tag/v0.5.0)
+    alias -g nvim='~/nvim.appimage'
   ;;
 esac

@@ -46,4 +46,7 @@ cd color-scripts
 # Restart Terminal, then select profile in Preferences/Profiles.
 ```
 
+## Neovim Customizations
+
+First, install Neovim 0.5 with [these instructions](https://github.com/neovim/neovim/releases/tag/v0.5.0). Then put the neovim executable into root.
 
