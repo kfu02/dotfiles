@@ -9,6 +9,11 @@ init.vim
 
 and a script (./link.zsh) to auto-link the relevant dotfiles on my system. (I switched from vim to neovim. TODO: delete vimrc.)
 
+## Neovim Customizations
+
+First, install Neovim 0.5 with [these instructions](https://github.com/neovim/neovim/releases/tag/v0.5.0). Then put the neovim executable into root.
+Start Neovim according to the instructions above, then run `:help nvim` to configure a blank `init.vim` file.
+
 ## Terminal Theme Installs
 
 ### [pure](https://github.com/sindresorhus/pure)
@@ -45,8 +50,3 @@ cd color-scripts
 ./base16-tomorrow-night-eighties-256.sh
 # Restart Terminal, then select profile in Preferences/Profiles.
 ```
-
-## Neovim Customizations
-
-First, install Neovim 0.5 with [these instructions](https://github.com/neovim/neovim/releases/tag/v0.5.0). Then put the neovim executable into root.
-
