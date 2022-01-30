@@ -14,6 +14,10 @@ and a script (./link.zsh) to auto-link the relevant dotfiles on my system. (I sw
 First, install Neovim 0.6 with [these instructions](https://github.com/neovim/neovim/releases/tag/v0.6.1). Then put the neovim executable into root.
 Start Neovim according to the instructions above, then run `:help nvim` to configure a blank `init.vim` file.
 
+## Functional Customizations
+
+Follow comments in .zshrc and init.vim as errors come up. :)
+
 ## Terminal Theme Installs
 
 ### [pure](https://github.com/sindresorhus/pure)
