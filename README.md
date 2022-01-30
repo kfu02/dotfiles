@@ -46,7 +46,7 @@ Download `.terminal` script from: https://github.com/chriskempson/tomorrow-theme
 # GNOME
 cd ~/.config
 git clone https://github.com/aaron-williamson/base16-gnome-terminal.git
-cd color-scripts
+cd base16-gnome-terminal/color-scripts/
 ./base16-tomorrow-night-eighties-256.sh
 # Restart Terminal, then select profile in Preferences/Profiles.
 ```
