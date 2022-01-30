@@ -166,9 +166,8 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Make V and Y behave like D and C
+" Make Y behave like D and C
 noremap Y y$
-noremap V v$
 
 " Persistent undo 
 " (nvim has default undodir)
