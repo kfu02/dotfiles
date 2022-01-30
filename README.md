@@ -11,7 +11,7 @@ and a script (./link.zsh) to auto-link the relevant dotfiles on my system. (I sw
 
 ## Neovim Customizations
 
-First, install Neovim 0.5 with [these instructions](https://github.com/neovim/neovim/releases/tag/v0.5.0). Then put the neovim executable into root.
+First, install Neovim 0.6 with [these instructions](https://github.com/neovim/neovim/releases/tag/v0.6.1). Then put the neovim executable into root.
 Start Neovim according to the instructions above, then run `:help nvim` to configure a blank `init.vim` file.
 
 ## Terminal Theme Installs
