@@ -13,13 +13,16 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 " Colorschemes
 Plug 'w0ng/vim-hybrid'
+Plug 'rakr/vim-one'
+Plug 'marko-cerovac/material.nvim'
 
 " Indent lines
-" Plug 'Yggdroot/indentLine'
-" Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Status bar
-Plug 'itchyny/lightline.vim'
+Plug 'nvim-lualine/lualine.nvim'
+" If you want to have icons in your statusline choose one of these
+Plug 'kyazdani42/nvim-web-devicons'
 
 " VSCode-style code completion
 " requires nodeJS (CLI install)
@@ -31,15 +34,17 @@ Plug 'mbbill/undotree'
 " LC3 syntax highlighting (CS 2110)
 Plug 'nprindle/lc3.vim'
 
-" Atom One Dark/Light theme
-Plug 'rakr/vim-one'
-
 " Telescope (fuzzy finder)
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-" Tree-sitter (telescope wants it)
-Plug 'nvim-treesitter/nvim-treesitter'
+" Tree-sitter (better syntax highlight)
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" Comment lines quickly 
+"   one line   = gcc
+"   many lines = gc{motion}
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -51,43 +56,64 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set termguicolors " Only needed in terminals
 
-" Hybrid colorscheme (see plug above)
-colorscheme hybrid
-set background=dark " for the dark version
+" Lualine setup (status bar)
+" (written in Lua so needs the EOF-related tags)
 
-" Atom one-light for lab (see above)
-" colorscheme one
-" set background=dark " for the dark version
-" set background=light " for the light version
+lua << EOF
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'material-stealth',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {},
+    always_divide_middle = true,
+    globalstatus = false,
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'filename'},
+    lualine_c = {'branch', 'diff'},
+    lualine_x = {'diagnostics', 'encoding'},
+    lualine_y = {'filetype'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  extensions = {}
+}
+EOF
 
-" Lightline (status bar)
-" :h g:lightline.colorscheme (to see all lightline colorschemes)
-let g:lightline = {
-    \ 'colorscheme': 'wombat',
-    \ 'component_function': {
-    \   'filename': 'LightlineFilename',
-    \ }
-    \ }
-
-" this function makes the filename show relative to root (for git dirs)
-" supposedly this only works with vim_fugitive, but I'm using it fine without
-" https://github.com/itchyny/lightline.vim/issues/293
-function! LightlineFilename()
-  let root = fnamemodify(get(b:, 'git_dir'), ':h')
-  let path = expand('%:p')
-  if path[:len(root)-1] ==# root
-    return path[len(root)+1:]
-  endif
-  return expand('%')
-endfunction
+" Material
+let g:material_style="darker" 
+colorscheme material " must go after config above
 
 " Line number
 set number
 set relativenumber
+" higlight current line num (but not current line)
+set cursorline
+set cursorlineopt=number
 
 " https://stackoverflow.com/questions/10746750/set-vim-bracket-highlighting-colors
 " Set sensible highlight matches that don't obscure the text
 hi MatchParen gui=underline guifg=none guibg=bg
+
+" put dots on blank lines
+lua << EOF
+require("indent_blankline").setup {
+    -- for example, context is off by default, use this to turn it on
+    show_current_context = true,
+    show_current_context_start = true,
+}
+EOF
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
