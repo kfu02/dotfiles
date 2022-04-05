@@ -46,6 +46,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "   many lines = gc{motion}
 Plug 'tpope/vim-commentary'
 
+" Highlight matching words to current under cursor (like IDEs)
+Plug 'RRethy/vim-illuminate'
+
 call plug#end()
 
 
@@ -62,38 +65,26 @@ set termguicolors " Only needed in terminals
 lua << EOF
 require('lualine').setup {
   options = {
-    icons_enabled = true,
-    theme = 'material-stealth',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    disabled_filetypes = {},
-    always_divide_middle = true,
-    globalstatus = false,
+    theme = 'auto',
   },
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'filename'},
     lualine_c = {'branch', 'diff'},
-    lualine_x = {'diagnostics', 'encoding'},
+    lualine_x = {'diagnostics'},
     lualine_y = {'filetype'},
     lualine_z = {'location'}
   },
   inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
+    lualine_a = {'mode'},
+    lualine_b = {'filename'},
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {'filetype'},
+    lualine_z = {'location'}
   },
-  tabline = {},
-  extensions = {}
 }
 EOF
-
-" Material
-let g:material_style="darker" 
-colorscheme material " must go after config above
 
 " Line number
 set number
@@ -101,10 +92,6 @@ set relativenumber
 " higlight current line num (but not current line)
 set cursorline
 set cursorlineopt=number
-
-" https://stackoverflow.com/questions/10746750/set-vim-bracket-highlighting-colors
-" Set sensible highlight matches that don't obscure the text
-hi MatchParen gui=underline guifg=none guibg=bg
 
 " put dots on blank lines
 lua << EOF
@@ -114,6 +101,29 @@ require("indent_blankline").setup {
     show_current_context_start = true,
 }
 EOF
+
+" Material
+
+lua << EOF
+require('material').setup({
+    lualine_style = 'default'
+})
+EOF
+
+let g:material_style="darker" 
+colorscheme material " must go after config above
+
+" add vim-illuminate's highlights to material colorscheme
+" https://github.com/marko-cerovac/material.nvim/issues/74
+" TODO: make this custom highlight match search hl colors
+lua << EOF
+-- require('material').setup({
+--      custom_highlights = {
+--         illuminatedWord = {bg='#0000FF'}
+--     }
+-- })
+EOF
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
