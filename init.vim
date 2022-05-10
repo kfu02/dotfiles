@@ -12,12 +12,13 @@ let g:lc3_detect_asm = 1
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 " Colorschemes
-Plug 'w0ng/vim-hybrid'
-Plug 'rakr/vim-one'
+" Plug 'w0ng/vim-hybrid'
+" Plug 'rakr/vim-one'
 Plug 'marko-cerovac/material.nvim'
+Plug 'sainnhe/everforest'
 
 " Indent lines
-Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Status bar
 Plug 'nvim-lualine/lualine.nvim'
@@ -90,36 +91,10 @@ set relativenumber
 set cursorline
 set cursorlineopt=number
 
-" put dots on blank lines
-lua << EOF
-require("indent_blankline").setup {
-    -- for example, context is off by default, use this to turn it on
-    show_current_context = true,
-    show_current_context_start = true,
-}
-EOF
+" Colorscheme
 
-" Material
-
-lua << EOF
-require('material').setup({
-    lualine_style = 'default'
-})
-EOF
-
-let g:material_style="darker" 
-colorscheme material " must go after config above
-
-" add vim-illuminate's highlights to material colorscheme
-" https://github.com/marko-cerovac/material.nvim/issues/74
-" TODO: make this custom highlight match search hl colors
-lua << EOF
--- require('material').setup({
---      custom_highlights = {
---         illuminatedWord = {bg='#0000FF'}
---     }
--- })
-EOF
+let g:everforest_background = 'hard'
+colorscheme everforest
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
