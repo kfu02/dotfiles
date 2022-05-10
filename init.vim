@@ -256,3 +256,7 @@ nnoremap <S-Tab> <C-O>
 
 " Enable mouse support
 set mouse+=a
+
+" Let me type Wq by accident
+" https://blog.sanctum.geek.nz/vim-koans/ (bottom of page)
+command! Wq wq
