@@ -38,6 +38,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 
 ### Tomorrow-Night-Eighties
 
+TODO: I've changed to everforest, change instructions here
+(find iterm2/Everforest and GNOME/everforest)
+
 [(MacOS)](https://github.com/chriskempson/tomorrow-theme/tree/master/OS%20X%20Terminal) /
 [(GNOME)](https://github.com/aaron-williamson/base16-gnome-terminal)
 
