@@ -46,9 +46,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "   many lines = gc{motion}
 Plug 'tpope/vim-commentary'
 
-" Highlight matching words to current under cursor (like IDEs)
-Plug 'RRethy/vim-illuminate'
-
 call plug#end()
 
 
