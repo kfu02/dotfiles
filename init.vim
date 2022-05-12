@@ -12,8 +12,7 @@ let g:lc3_detect_asm = 1
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 " Colorschemes
-" Plug 'w0ng/vim-hybrid'
-" Plug 'rakr/vim-one'
+Plug 'ful1e5/onedark.nvim'
 Plug 'marko-cerovac/material.nvim'
 Plug 'sainnhe/everforest'
 
@@ -74,12 +73,12 @@ require('lualine').setup {
     lualine_z = {'location'}
   },
   inactive_sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'filename'},
+    lualine_a = {'filename'}, -- filename is bolded now to make splits more obvious
+    lualine_b = {},
     lualine_c = {},
     lualine_x = {},
     lualine_y = {'filetype'},
-    lualine_z = {'location'}
+    lualine_z = {}
   },
 }
 EOF
@@ -93,8 +92,16 @@ set cursorlineopt=number
 
 " Colorscheme
 
-let g:everforest_background = 'hard'
-colorscheme everforest
+" onedark
+colorscheme onedark
+
+" material
+" let g:material_style = "darker"
+" colorscheme material
+
+" everforest
+" let g:everforest_background = 'hard'
+" colorscheme everforest
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
