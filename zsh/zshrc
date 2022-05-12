@@ -18,9 +18,7 @@ HISTFILE=~/.zsh_history
 
 # fasd replaced with z
 # download: https://raw.githubusercontent.com/rupa/z/master/z.sh
-. ~/z.sh
-# Use emacs keybindings even if our EDITOR is set to vi
-# bindkey -e
+. $HOME/.dotfiles/zsh/z.sh
 
 # Use modern completion system
 autoload -Uz compinit
@@ -91,10 +89,8 @@ alias ..="cd .."
 alias sl='ls'
 alias rm='rm -i'
 
-# vim aliases
-# alias v='nvim'
-# alias vim='nvim'
-alias -g nvrc='~/.config/nvim/init.vim'
+# go to dotfiles, open nvim, then return to last pwd
+alias dots="(cd ~/.dotfiles && nvim .)"
 
 # use Vi keybindings on the command line
 bindkey -v
