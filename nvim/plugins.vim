@@ -2,7 +2,7 @@
 "
 " Plugins
 " 
-" dependency: CLI install: https://github.com/junegunn/vim-plug
+" Install all plugins with vim-plug (dependency: external install).
 "
 " Ordered by likeliness to change: least likely to change is at the bottom.
 "
@@ -11,7 +11,7 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 " Colorschemes
-Plug 'ful1e5/onedark.nvim'
+Plug 'ful1e5/onedark.nvim' " currently in use
 Plug 'marko-cerovac/material.nvim'
 Plug 'sainnhe/everforest'
 
