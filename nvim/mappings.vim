@@ -2,7 +2,7 @@
 "
 " Mappings
 "
-" Binds that I've found useful + short config options for plugins.
+" Useful binds/options + short config options for plugins.
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

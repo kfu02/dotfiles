@@ -1,68 +1,31 @@
-# pure theme
+################################################################################
 #
-# install:
-# mkdir -p "$HOME/.zsh"
-# git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+# zshrc
 #
-# config:
-fpath+=$HOME/.zsh/pure
+# Set up plugins, aliases, and zsh config options. Work done in those
+# respective .zsh files.
+#
+# (Some auto-generated lines (by p10k, conda) deliberately left here.)
+#
+################################################################################
 
-autoload -U promptinit; promptinit
-prompt pure
-
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-setopt histignorealldups sharehistory
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE=~/.zsh_history
-
-# fasd replaced with z
-# download: https://raw.githubusercontent.com/rupa/z/master/z.sh
-. $HOME/.dotfiles/zsh/z.sh
-
-# Use modern completion system
-autoload -Uz compinit
-compinit
-
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' menu select=2
-# eval "$(dircolors -b)"
-# zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-# zstyle ':completion:*' list-colors ''
-if whence dircolors >/dev/null; then
-  eval "$(dircolors -b)"
-  zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-  alias ls='ls --color'
-else
-  export CLICOLOR=1
-  zstyle ':completion:*:default' list-colors ''
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-zstyle ':completion:*' menu select=long
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
-zstyle ':completion:*' verbose true
 
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+export DOTFILES_PATH="$HOME/.dotfiles"
 
-# zsh-syntax-highlighting
+# install all plugins
+. $DOTFILES_PATH/zsh/plugins.zsh
 
-# OS-specific aliases
-case `uname` in
-  Darwin)
-    # commands for OS X go here
-    source /Users/kevinfu/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  ;;
-  Linux)
-    # commands for Linux go here
-    source /home/kfu/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  ;;
-esac
+# source my aliases
+. $DOTFILES_PATH/zsh/aliases.zsh
+
+# add all my config options
+. $DOTFILES_PATH/zsh/config.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -79,42 +42,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# python aliases
-alias python='python3'
-# alias py='python'
-alias pip='python -m pip'
-
-# shell aliases
-alias ..="cd .."
-alias sl='ls'
-alias rm='rm -i'
-
-# go to dotfiles, open nvim, then return to last pwd
-alias dots="(cd ~/.dotfiles && nvim .)"
-
-# use Vi keybindings on the command line
-bindkey -v
-
-# for pattern search (the wildcard `*` will use zsh completion)
-bindkey '^R' history-incremental-pattern-search-backward
-
-# OS-specific aliases
-case `uname` in
-  Darwin)
-    # commands for OS X go here
-    alias o='open'
-
-    # install neovim via Homebrew
-    # > brew install neovim
-    # (this binds directly to nvim)
-  ;;
-  Linux)
-    # commands for Linux go here
-    alias open='xdg-open'
-    alias o='open'
-
-    # neovim 0.5 requires special appimage 
-    # (https://github.com/neovim/neovim/releases/tag/v0.5.0)
-    alias -g nvim='~/nvim.appimage'
-  ;;
-esac
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# (~/.p10k.zsh saved in $DOTFILES_PATH)
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
