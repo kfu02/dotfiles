@@ -3,43 +3,38 @@
 Dotfile backup and installation for my personal use. Feel free to take whatever
 interests you (nearly all of it is taken from someone else, anyhow).
 
-## Installation (For Me)
+## Brief Install List
 
-**Disclaimer:** this is not meant to be installed by someone else, so if it's buggy
-or the instructions are vague, that's why.
+**Disclaimer:** this is not meant to be installed by someone else, so if it's
+buggy or the instructions are vague, that's why.
 
-### Homebrew
+### Ubuntu-only
 
-Follow instructions at their website.
+*These are installed by default on MacOS.*
 
-### zsh
+ - zsh: `sudo apt install zsh`. Then search "how to make zsh default shell" and
+   follow instructions.
+ - git: `sudo apt install git`.
 
-Linux: `sudo apt-get install zsh`
-(Then search "how to make zsh default shell" and follow directions.)
 
-MacOS: zsh is already default shell.
+### Both MacOS & Ubuntu
 
-### Terminal Colorscheme
+First, `git clone` this repo as `~/.dotfiles`.
 
-Currently on Atom One Dark clones. Search for "iterm2/GNOME One Dark themes"
-and follow instructions to install.
-
-### Neovim
-
-Install with `brew install neovim`. (This binds neovim to nvim too.)
-
-### Nvim Plugins
-
-Follow instructions from the [GitHub
-page](https://github.com/junegunn/vim-plug#neovim). Then open neovim and run
-`:PlugInstall` to install neovim plugins.
-
-### Other dependencies
+ - Homebrew: Follow instructions from [their website](https://brew.sh/).
+ - Terminal Colorscheme: Search for "iterm2/GNOME One Dark themes" and follow
+   instructions.
+ - Neovim: `brew install neovim`. (This binds neovim to nvim too.)
+ - Vim-Plug: Follow instructions from the [GitHub page](https://github.com/junegunn/vim-plug#neovim). 
+ - Nvim Plugins: Open nvim and run `:PlugInstall`.
+ - Other:
 
 Search for `dependency:` in this repo to find all dependencies.
 
 **ripgrep:** Needed by Telescope. `brew install ripgrep`.
 **nodeJS:** Needed by coc.nvim. `brew install node`.
+
+Double-check all plugins in neovim are working correctly with `:checkhealth`.
 
 ## Structure
 
