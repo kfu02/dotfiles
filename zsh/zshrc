@@ -16,6 +16,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+bindkey "^M" magic-enter
+
 export DOTFILES_PATH="$HOME/.dotfiles"
 
 # install all plugins
@@ -25,7 +27,7 @@ export DOTFILES_PATH="$HOME/.dotfiles"
 . $DOTFILES_PATH/zsh/aliases.zsh
 
 # add all my config options
-. $DOTFILES_PATH/zsh/config.zsh
+. $DOTFILES_PATH/zsh/config/config.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

@@ -2,9 +2,19 @@
 #
 # config.zsh
 #
-# Add useful zsh config options.
+# Add useful zsh config options. Loads my custom zsh configs in this dir.
 #
 ################################################################################
+
+# use Vi keybindings on the command line
+# (ESC to enter normal mode--on insert by default)
+# must go first to avoid overwriting later `bindkey` calls
+bindkey -v
+
+CONFIG_PATH="$DOTFILES_PATH/zsh/config"
+
+# Load magic-enter (see file for more info)
+. $CONFIG_PATH/magic-enter.zsh
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 setopt histignorealldups sharehistory
@@ -14,10 +24,6 @@ HISTFILE=~/.zsh_history
 
 # CTRL-R - search command history (the wildcard `*` will use zsh completion)
 bindkey '^R' history-incremental-pattern-search-backward
-
-# use Vi keybindings on the command line
-# (ESC to enter normal mode--on insert by default)
-bindkey -v
 
 # Use modern completion system
 # I have no idea where this long string of commands is from but it works well

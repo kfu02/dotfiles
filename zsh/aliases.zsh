@@ -13,6 +13,9 @@ alias pip='python -m pip'
 # shell aliases
 alias sl='ls'
 alias rm='rm -i'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 # go to dotfiles + open nvim to edit without leaving pwd
 alias dots="(cd ~/.dotfiles && nvim .)"
