@@ -26,13 +26,12 @@ First, `git clone` this repo as `~/.dotfiles`.
    instructions.
  - Neovim: `brew install neovim`. (This binds neovim to nvim too.)
  - Vim-Plug: Follow instructions from the [GitHub page](https://github.com/junegunn/vim-plug#neovim). 
- - Nvim Plugins: Open nvim and run `:PlugInstall`.
- - Other:
+ - Neovim Plugins: `:PlugInstall` in neovim.
 
-Search for `dependency:` in this repo to find all dependencies.
+Neovim plugin dependencies (search for `dependency:` in this repo to find all dependencies):
 
-**ripgrep:** Needed by Telescope. `brew install ripgrep`.
-**nodeJS:** Needed by coc.nvim. `brew install node`.
+ - ripgrep: `brew install ripgrep`. Needed by Telescope. 
+ - nodeJS: `brew install node`. Needed by coc.nvim. 
 
 Double-check all plugins in neovim are working correctly with `:checkhealth`.
 
