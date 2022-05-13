@@ -10,6 +10,13 @@
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
+" vinegar.vim - netrw enhancer
+"   -      = go up one dir level
+"   y.     = yank filepath
+"   CTRL-6 = switch back to prev buffer
+" more binds I can't remember on GH
+Plug 'tpope/vim-vinegar'
+
 " Colorschemes
 Plug 'ful1e5/onedark.nvim' " currently in use
 Plug 'marko-cerovac/material.nvim'
