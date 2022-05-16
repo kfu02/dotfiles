@@ -44,6 +44,23 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# OS-specific aliases
+case `uname` in
+  Darwin)
+  ;;
+  Linux)
+    # homebrew's .zprofile solution doesn't work
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+    # GREENZIE
+    # source noetic on every new shell
+    source /opt/ros/noetic/setup.zsh
+    # source catkin's build setup on every new shell
+    source ~/catkin_ws/devel/setup.zsh
+
+  ;;
+esac
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # (~/.p10k.zsh saved in $DOTFILES_PATH)
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
