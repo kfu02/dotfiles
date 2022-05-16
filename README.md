@@ -13,25 +13,31 @@ buggy or the instructions are vague, that's why.
 *These are installed by default on MacOS.*
 
  - zsh: `sudo apt install zsh`. Then search "how to make zsh default shell" and
-   follow instructions.
+   follow instructions. Pick the option that creates an empty .zshrc.
  - git: `sudo apt install git`.
+ - Lua: `sudo apt install lua`.
 
+For your sanity, bind caps lock to ESC with gnome-tweaks:
+
+```
+sudo apt install gnome-tweak-tool
+gnome-tweaks
+(follow GUI options)
+```
 
 ### Both MacOS & Ubuntu
 
 First, `git clone` this repo as `~/.dotfiles`.
 
  - Homebrew: Follow instructions from [their website](https://brew.sh/).
+ - ripgrep: `brew install ripgrep`. Needed by Telescope (nvim plugin).
+ - nodeJS: `brew install node`. Needed by coc.nvim (nvim plugin). 
+ - Neovim: `brew install neovim`. (This binds neovim to `nvim`.) Create an empty init.vim file at `~/.config/init.vim`.
+ - Vim-Plug: Follow instructions from the [GitHub page](https://github.com/junegunn/vim-plug#neovim). 
  - Terminal Colorscheme: Search for "iterm2/GNOME One Dark themes" and follow
    instructions.
- - Neovim: `brew install neovim`. (This binds neovim to nvim too.)
- - Vim-Plug: Follow instructions from the [GitHub page](https://github.com/junegunn/vim-plug#neovim). 
- - Neovim Plugins: `:PlugInstall` in neovim.
 
-Neovim plugin dependencies (search for `dependency:` in this repo to find all dependencies):
-
- - ripgrep: `brew install ripgrep`. Needed by Telescope. 
- - nodeJS: `brew install node`. Needed by coc.nvim. 
+Then run `./link.zsh` to link all dotfiles. Once dotfiles are linked, open neovim and run `:PlugInstall`.
 
 Double-check all plugins in neovim are working correctly with `:checkhealth`.
 
