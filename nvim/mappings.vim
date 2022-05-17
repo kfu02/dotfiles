@@ -72,7 +72,7 @@ set splitbelow
 
 " Force tab key to insert 4 spaces
 set expandtab
-set tabstop=4
+set tabstop=2
 set shiftwidth=4
 set softtabstop=4
 
