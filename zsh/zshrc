@@ -29,36 +29,37 @@ DOTFILES_PATH="$HOME/.dotfiles"
 # add all my config options
 . $DOTFILES_PATH/zsh/config/config.zsh
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/kevinfu/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/kevinfu/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/kevinfu/opt/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/kevinfu/opt/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# OS-specific aliases
+# make homebrew work for real
 case `uname` in
   Darwin)
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/Users/kevinfu/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/Users/kevinfu/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "/Users/kevinfu/opt/miniconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/Users/kevinfu/opt/miniconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
   ;;
   Linux)
     # homebrew's .zprofile solution doesn't work
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-    # GREENZIE
-    # source noetic on every new shell
-    source /opt/ros/noetic/setup.zsh
-    # source catkin's build setup on every new shell
-    source ~/catkin_ws/devel/setup.zsh
+    # put homebrew at the end of PATH
+    # to avoid conflicts with python3 calling brew's install
+    # https://unix.stackexchange.com/questions/537062/homebrew-replaced-python3-how-to-reverse
+    export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"
   ;;
 esac
+
+# GREENZIE
+. $DOTFILES_PATH/zsh/config/greenzie.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # (~/.p10k.zsh saved in $DOTFILES_PATH)
