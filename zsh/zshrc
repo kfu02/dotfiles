@@ -57,7 +57,6 @@ case `uname` in
     source /opt/ros/noetic/setup.zsh
     # source catkin's build setup on every new shell
     source ~/catkin_ws/devel/setup.zsh
-
   ;;
 esac
 
