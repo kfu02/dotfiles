@@ -39,6 +39,10 @@ set mouse+=a
 " https://blog.sanctum.geek.nz/vim-koans/ (bottom of page)
 command! Wq wq
 
+" Stop accidentally write-quitting
+" (by default :W => write and quit)
+command! W w
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
