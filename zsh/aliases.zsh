@@ -17,6 +17,12 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+# prevent copy-pasting this
+#    git push --set-upstream origin <branch-name>
+# when pushing a new branch
+# https://devconnected.com/how-to-set-upstream-branch-on-git/
+alias gpu='git push -u origin HEAD'
+
 # go to dotfiles + open nvim to edit without leaving pwd
 alias dots="(cd ~/.dotfiles && nvim .)"
 
