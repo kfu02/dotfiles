@@ -31,12 +31,12 @@ First, `git clone` this repo as `~/.dotfiles`.
 
  - Homebrew: Follow instructions from [their website](https://brew.sh/).
  - tmux: `brew install tmux`. Window manager.
+ - tmux-plugin-manager: See [Github page](https://github.com/tmux-plugins/tpm).
  - ripgrep: `brew install ripgrep`. Needed by Telescope (nvim plugin).
  - nodeJS: `brew install node`. Needed by coc.nvim (nvim plugin). 
  - Neovim: `brew install neovim`. (This binds neovim to `nvim`.) Create an empty init.vim file at `~/.config/init.vim`.
  - Vim-Plug: Follow instructions from the [GitHub page](https://github.com/junegunn/vim-plug#neovim). 
- - Terminal Colorscheme: Search for "iterm2/GNOME One Dark themes" and follow
-   instructions.
+ - Terminal Colorscheme: Follow linked instructions. [iterm2](https://github.com/one-dark/iterm-one-dark-theme). [Ubuntu](https://github.com/denysdovhan/one-gnome-terminal/blob/master/one-dark.sh).
 
 Then install all plugins:
 
