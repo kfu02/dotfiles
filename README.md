@@ -35,8 +35,7 @@ First, `git clone` this repo as `~/.dotfiles`.
  - nodeJS: `brew install node`. Needed by coc.nvim (nvim plugin). 
  - Neovim: `brew install neovim`. (This binds neovim to `nvim`.) Create an empty init.vim file at `~/.config/init.vim`.
  - Vim-Plug: Follow instructions from the [GitHub page](https://github.com/junegunn/vim-plug#neovim). 
- - Terminal Colorscheme: Search for "iterm2/GNOME One Dark themes" and follow
-   instructions.
+ - Terminal Colorscheme: Follow linked instructions. [iterm2](https://github.com/one-dark/iterm-one-dark-theme). [Ubuntu](https://github.com/denysdovhan/one-gnome-terminal/blob/master/one-dark.sh).
 
 Then install all plugins:
 
