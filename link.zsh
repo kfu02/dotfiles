@@ -18,5 +18,9 @@ echo '.p10k linked'
 ln -sf $DOTFILES_PATH/zsh/zshrc $HOME/.zshrc
 echo '.zshrc linked'
 
+# link tmux.conf
+ln -sf $DOTFILES_PATH/tmux/tmux.conf $HOME/.tmux.conf
+echo '.tmux.conf linked'
+
 # restart shell to apply changes
 exec zsh

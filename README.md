@@ -30,6 +30,7 @@ gnome-tweaks
 First, `git clone` this repo as `~/.dotfiles`.
 
  - Homebrew: Follow instructions from [their website](https://brew.sh/).
+ - tmux: `brew install tmux`. Window manager.
  - ripgrep: `brew install ripgrep`. Needed by Telescope (nvim plugin).
  - nodeJS: `brew install node`. Needed by coc.nvim (nvim plugin). 
  - Neovim: `brew install neovim`. (This binds neovim to `nvim`.) Create an empty init.vim file at `~/.config/init.vim`.
@@ -37,7 +38,11 @@ First, `git clone` this repo as `~/.dotfiles`.
  - Terminal Colorscheme: Search for "iterm2/GNOME One Dark themes" and follow
    instructions.
 
-Then run `./link.zsh` to link all dotfiles. Once dotfiles are linked, open neovim and run `:PlugInstall`.
+Then install all plugins:
+
+ - `./link.zsh` to link all dotfiles.
+ - Run `:PlugInstall` in neovim.
+ - Hit `prefix + I` in tmux.
 
 Double-check all plugins in neovim are working correctly with `:checkhealth`.
 

@@ -39,6 +39,10 @@ set mouse+=a
 " https://blog.sanctum.geek.nz/vim-koans/ (bottom of page)
 command! Wq wq
 
+" Stop accidentally write-quitting
+" (by default :W => write and quit)
+command! W w
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
@@ -70,11 +74,11 @@ set cursorlineopt=number
 set splitright
 set splitbelow
 
-" Force tab key to insert 4 spaces
+" Force tab key to insert 2 spaces
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "

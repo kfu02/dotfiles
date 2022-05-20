@@ -10,8 +10,13 @@
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
+" vim-tmux-navigator - jump between vim and tmux panes seamlessly
+" https://github.com/christoomey/vim-tmux-navigator
+Plug 'christoomey/vim-tmux-navigator'
+
 " vinegar.vim - netrw enhancer
 "   -      = go up one dir level
+"   .      = put file in a : command
 "   y.     = yank filepath
 "   CTRL-6 = switch back to prev buffer
 " more binds I can't remember on GH
