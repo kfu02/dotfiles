@@ -13,25 +13,35 @@ buggy or the instructions are vague, that's why.
 *These are installed by default on MacOS.*
 
  - zsh: `sudo apt install zsh`. Then search "how to make zsh default shell" and
-   follow instructions.
+   follow instructions. Pick the option that creates an empty .zshrc.
  - git: `sudo apt install git`.
+ - Lua: `sudo apt install lua`.
 
+For your sanity, bind caps lock to ESC with gnome-tweaks:
+
+```
+sudo apt install gnome-tweak-tool
+gnome-tweaks
+(follow GUI options)
+```
 
 ### Both MacOS & Ubuntu
 
 First, `git clone` this repo as `~/.dotfiles`.
 
  - Homebrew: Follow instructions from [their website](https://brew.sh/).
- - Terminal Colorscheme: Search for "iterm2/GNOME One Dark themes" and follow
-   instructions.
- - Neovim: `brew install neovim`. (This binds neovim to nvim too.)
+ - tmux: `brew install tmux`. Window manager.
+ - ripgrep: `brew install ripgrep`. Needed by Telescope (nvim plugin).
+ - nodeJS: `brew install node`. Needed by coc.nvim (nvim plugin). 
+ - Neovim: `brew install neovim`. (This binds neovim to `nvim`.) Create an empty init.vim file at `~/.config/init.vim`.
  - Vim-Plug: Follow instructions from the [GitHub page](https://github.com/junegunn/vim-plug#neovim). 
- - Neovim Plugins: `:PlugInstall` in neovim.
+ - Terminal Colorscheme: Follow linked instructions. [iterm2](https://github.com/one-dark/iterm-one-dark-theme). [Ubuntu](https://github.com/denysdovhan/one-gnome-terminal/blob/master/one-dark.sh).
 
-Neovim plugin dependencies (search for `dependency:` in this repo to find all dependencies):
+Then install all plugins:
 
- - ripgrep: `brew install ripgrep`. Needed by Telescope. 
- - nodeJS: `brew install node`. Needed by coc.nvim. 
+ - `./link.zsh` to link all dotfiles.
+ - Run `:PlugInstall` in neovim.
+ - Hit `prefix + I` in tmux.
 
 Double-check all plugins in neovim are working correctly with `:checkhealth`.
 
