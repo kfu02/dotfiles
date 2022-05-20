@@ -31,6 +31,7 @@ First, `git clone` this repo as `~/.dotfiles`.
 
  - Homebrew: Follow instructions from [their website](https://brew.sh/).
  - tmux: `brew install tmux`. Window manager.
+ - tmux-plugin-manager: See [Github page](https://github.com/tmux-plugins/tpm).
  - ripgrep: `brew install ripgrep`. Needed by Telescope (nvim plugin).
  - nodeJS: `brew install node`. Needed by coc.nvim (nvim plugin). 
  - Neovim: `brew install neovim`. (This binds neovim to `nvim`.) Create an empty init.vim file at `~/.config/init.vim`.
