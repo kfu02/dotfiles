@@ -26,3 +26,6 @@ export DECK_WIDTH_INCHES=61
 # properly set up name and email when running dch, put this in your .bashrc
 # from https://github.com/Greenzie/robotic-lawnmower/blob/noetic-devel/docs/Development.md#bumping-package-revisions
 alias dch="DEBEMAIL=\"$(git config --get user.email)\" DEBFULLNAME=\"$(git config --get user.name)\" dch"
+
+# build from any dir
+alias build="(cd ~/catkin_ws/ && catkin_make)"
