@@ -52,6 +52,23 @@ command! W w
 
 " Colorscheme
 
+" make color scheme work in tmux
+" https://github.com/joshdick/onedark.vim/issues/69
+if &term =~ '256color'
+    " disable background color erase
+    set t_ut=
+endif
+
+" enable 24 bit color support if supported
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+" tell vim terminal has 256 colors
+set t_Co=256
+" dark background
+set background=dark
+
 " onedark
 colorscheme onedark
 
