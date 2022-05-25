@@ -11,6 +11,11 @@
 # must go first to avoid overwriting later `bindkey` calls
 bindkey -v
 
+# make things like git open in nvim by default
+# https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
 CONFIG_PATH="$DOTFILES_PATH/zsh/config"
 
 # Load magic-enter (see file for more info)
