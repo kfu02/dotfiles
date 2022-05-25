@@ -10,6 +10,10 @@
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
+" filetype.nvim - make filetype detection faster (+ allow custom ext changes)
+" https://github.com/nathom/filetype.nvim
+Plug 'nathom/filetype.nvim'
+
 " vim-tmux-navigator - jump between vim and tmux panes seamlessly
 " https://github.com/christoomey/vim-tmux-navigator
 Plug 'christoomey/vim-tmux-navigator'
