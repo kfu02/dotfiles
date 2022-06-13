@@ -10,6 +10,15 @@
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
+" open-browser.vim - open links in buffers in browser
+" gx (while over a link) - open link with xdg-open/open
+" https://github.com/tyru/open-browser.vim
+Plug 'tyru/open-browser.vim'
+
+" open-browser-github.vim - open files in git repos in browser
+" https://github.com/tyru/open-browser-github.vim
+Plug 'tyru/open-browser-github.vim'
+
 " filetype.nvim - make filetype detection faster (+ allow custom ext changes)
 " https://github.com/nathom/filetype.nvim
 Plug 'nathom/filetype.nvim'

@@ -43,6 +43,9 @@ command! Wq wq
 " (by default :W => write and quit)
 command! W w
 
+" Use :OpenGithubFile more easily
+" (via open-browser-github plugin)
+:noremap <leader>gh :OpenGithubFile<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
