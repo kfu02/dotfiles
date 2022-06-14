@@ -24,3 +24,6 @@ alias dch="DEBEMAIL=\"$(git config --get user.email)\" DEBFULLNAME=\"$(git confi
 
 # build from any dir
 alias build="(cd ~/catkin_ws/ && catkin_make)"
+#
+# properly set up name and email when running dch, put this in your .bashrc
+alias dch="DEBEMAIL=\"$(git config --get user.email)\" DEBFULLNAME=\"$(git config --get user.name)\" dch"
