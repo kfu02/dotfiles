@@ -10,6 +10,14 @@
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
+" startuptime.vim - obsess over vim startup times
+" 
+" :StartupTime to profile + show time in ms
+" za - toggle folds
+"
+" https://github.com/tweekmonster/startuptime.vim
+Plug 'tweekmonster/startuptime.vim'
+
 " filetype.nvim - make filetype detection faster (+ allow custom ext changes)
 " https://github.com/nathom/filetype.nvim
 Plug 'nathom/filetype.nvim'
