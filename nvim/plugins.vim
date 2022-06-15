@@ -45,8 +45,8 @@ Plug 'tpope/vim-vinegar'
 
 " Colorschemes
 Plug 'ful1e5/onedark.nvim' " currently in use
-Plug 'marko-cerovac/material.nvim'
 Plug 'sainnhe/everforest'
+Plug 'sainnhe/sonokai'
 
 " Lualine - pretty statusline
 Plug 'nvim-lualine/lualine.nvim'
