@@ -72,12 +72,11 @@ set t_Co=256
 " dark background
 set background=dark
 
-" onedark
+" minimal Atom OneDark
 colorscheme onedark
 
-" material
-" let g:material_style = "darker"
-" colorscheme material
+" sonokai
+" colorscheme sonokai
 
 " everforest
 " let g:everforest_background = "hard"
@@ -99,6 +98,10 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+
+" Folds by treesitter syntax
+" set foldmethod=expr
+" set foldexpr=nvim_treesitter#foldexpr()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
