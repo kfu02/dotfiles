@@ -9,7 +9,7 @@
 # use Vi keybindings on the command line
 # (ESC to enter normal mode--on insert by default)
 # must go first to avoid overwriting later `bindkey` calls
-bindkey -v
+bindkey -e
 
 # make things like git open in nvim by default
 # https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits
