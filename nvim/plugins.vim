@@ -10,6 +10,9 @@
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
+" fugitive.vim - Git commands in vim
+Plug 'tpope/vim-fugitive'
+
 " open-browser.vim - open links in buffers in browser
 " gx (while over a link) - open link with xdg-open/open
 " https://github.com/tyru/open-browser.vim
