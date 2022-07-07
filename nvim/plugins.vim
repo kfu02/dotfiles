@@ -27,6 +27,14 @@ Plug 'tyru/open-browser-github.vim'
 " https://github.com/tweekmonster/startuptime.vim
 Plug 'tweekmonster/startuptime.vim'
 
+" startuptime.vim - obsess over vim startup times
+" 
+" :StartupTime to profile + show time in ms
+" za - toggle folds
+"
+" https://github.com/tweekmonster/startuptime.vim
+Plug 'tweekmonster/startuptime.vim'
+
 " filetype.nvim - make filetype detection faster (+ allow custom ext changes)
 " https://github.com/nathom/filetype.nvim
 Plug 'nathom/filetype.nvim'
