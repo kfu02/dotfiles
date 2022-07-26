@@ -26,6 +26,10 @@ alias gpu='git push -u origin HEAD'
 # go to dotfiles + open nvim to edit without leaving pwd
 alias dots="(cd ~/.dotfiles && nvim .)"
 
+# no need to add -t for tmux a
+# tmuxa $name => tmux a -t $name
+alias tmuxa='(){ tmux a -t $1;}'
+
 # OS-specific aliases
 case `uname` in
   Darwin)
