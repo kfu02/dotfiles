@@ -48,13 +48,30 @@ case `uname` in
     # <<< conda initialize <<<
   ;;
   Linux)
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/home/kfu/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/home/kfu/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/kfu/miniconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/kfu/miniconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+    
     # homebrew's .zprofile solution doesn't work
-    # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-    # put homebrew at the end of PATH
-    # to avoid conflicts with python3 calling brew's install
+    # put homebrew at the end of PATH to avoid conflicts with python3 calling brew's install
     # https://unix.stackexchange.com/questions/537062/homebrew-replaced-python3-how-to-reverse
     export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin"
+
+    # for GTSFM
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
   ;;
 esac
 
