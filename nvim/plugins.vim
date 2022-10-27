@@ -4,32 +4,24 @@
 " 
 " Install all plugins with vim-plug (dependency: external install).
 "
-" Ordered by likeliness to change: least likely to change is at the bottom.
+" Ordered by installation recency.
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
-" vim-surround - surround text objects easily
-" https://github.com/tpope/vim-surround
+" gitsigns.nvim - show changes since last commit
+Plug 'lewis6991/gitsigns.nvim'
+
+" vim-surround - surround text objects in anything
 Plug 'tpope/vim-surround'
 
 " open-browser.vim - open links in buffers in browser
 " gx (while over a link) - open link with xdg-open/open
 " https://github.com/tyru/open-browser.vim
 Plug 'tyru/open-browser.vim'
-
-" open-browser-github.vim - open files in git repos in browser
 " https://github.com/tyru/open-browser-github.vim
 Plug 'tyru/open-browser-github.vim'
-"
-" startuptime.vim - obsess over vim startup times
-" 
-" :StartupTime to profile + show time in ms
-" za - toggle folds
-"
-" https://github.com/tweekmonster/startuptime.vim
-Plug 'tweekmonster/startuptime.vim'
 
 " startuptime.vim - obsess over vim startup times
 " 

@@ -20,7 +20,7 @@ buggy or the instructions are vague, that's why.
 For your sanity, bind caps lock to ESC with gnome-tweaks:
 
 ```
-sudo apt install gnome-tweak-tool
+sudo apt install gnome-tweaks
 gnome-tweaks
 (follow GUI options)
 ```
