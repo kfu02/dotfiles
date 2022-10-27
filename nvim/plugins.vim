@@ -10,6 +10,10 @@
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
+" vim-surround - surround text objects easily
+" https://github.com/tpope/vim-surround
+Plug 'tpope/vim-surround'
+
 " open-browser.vim - open links in buffers in browser
 " gx (while over a link) - open link with xdg-open/open
 " https://github.com/tyru/open-browser.vim
