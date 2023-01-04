@@ -10,6 +10,17 @@
 " e.g. ,ff calls Telescope find_files() (see Mappings: Telescope)
 let mapleader=","
 
+" open quickfix list easily
+function! ToggleQuickFix()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+        copen
+    else
+        cclose
+    endif
+endfunction
+
+nnoremap <silent> <leader>qf :call ToggleQuickFix()<cr>
+
 " Make Y behave like D and C (to end of line, from curr cursor pos)
 noremap Y y$
 
@@ -119,6 +130,8 @@ set smartcase
 
 " Toggle search highlighting with enter
 :noremap <CR> :set hlsearch! hlsearch?<CR>
+" but disable this bind in quickfix lists
+autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
 " Mappings: telescope
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>

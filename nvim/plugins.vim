@@ -10,6 +10,8 @@
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
+Plug 'akinsho/git-conflict.nvim'
+
 " gitsigns.nvim - show changes since last commit
 Plug 'lewis6991/gitsigns.nvim'
 
