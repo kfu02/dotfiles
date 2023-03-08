@@ -11,7 +11,7 @@
 let mapleader=","
 
 " Add current date quickly by typing dts in insert mode
-:iab <expr> dts strftime("%x \n%I:%M %p")
+:iab <expr> dts strftime("%x - %I:%M %p")
 
 " open markdown preview in browser
 " https://github.com/iamcco/markdown-preview.nvim
