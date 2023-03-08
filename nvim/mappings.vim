@@ -10,6 +10,10 @@
 " e.g. ,ff calls Telescope find_files() (see Mappings: Telescope)
 let mapleader=","
 
+" open markdown preview in browser
+" https://github.com/iamcco/markdown-preview.nvim
+nnoremap <leader>md :MarkdownPreviewToggle<CR>
+
 " open quickfix list easily
 function! ToggleQuickFix()
     if empty(filter(getwininfo(), 'v:val.quickfix'))

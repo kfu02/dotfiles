@@ -10,13 +10,18 @@
 
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
+" markdown-preview.nvim - render markdown in browser from nvim
+" https://github.com/iamcco/markdown-preview.nvim
+" Plug 'iamcco/markdown-preview.nvim', { 'tag': 'v0.0.10' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+
+" git-conflict.nvim - highlight git conflicts and help remove them
+" https://github.com/akinsho/git-conflict.nvim
 Plug 'akinsho/git-conflict.nvim'
 
 " gitsigns.nvim - show changes since last commit
-Plug 'lewis6991/gitsigns.nvim'
-
-" vim-surround - surround text objects in anything
-Plug 'tpope/vim-surround'
+" https://github.com/lewis6991/gitsigns.nvim
+Plug 'lewis6991/gitsigns.nvim', { 'tag': 'release' }
 
 " open-browser.vim - open links in buffers in browser
 " gx (while over a link) - open link with xdg-open/open
