@@ -91,14 +91,7 @@ set t_Co=256
 set background=dark
 
 " minimal Atom OneDark
-colorscheme onedark
-
-" sonokai
-" colorscheme sonokai
-
-" everforest
-" let g:everforest_background = "hard"
-" colorscheme everforest
+"colorscheme onedark
 
 " Line number
 set number
@@ -141,12 +134,8 @@ set smartcase
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 
 " Mappings: telescope
+" TODO: move to plugins.lua
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-
-" Mappings: sourcery
-nmap <leader>gp <Plug>SourceryGoToRelatedPluginDefinition
-nmap <leader>gm <Plug>SourceryGoToRelatedMappings
-nmap <leader>gc <Plug>SourceryGoToRelatedConfig

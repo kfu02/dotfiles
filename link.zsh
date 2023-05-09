@@ -6,9 +6,9 @@
 # (duplicate in zshrc)
 DOTFILES_PATH="$HOME/.dotfiles"
 
-# link nvim dotfile
-ln -sf $DOTFILES_PATH/nvim/init.vim $HOME/.config/nvim/init.vim
-echo 'init.vim (nvim) linked'
+# link entire nvim/ directory
+ln -sf $DOTFILES_PATH/nvim/* $HOME/.config/nvim/
+echo 'nvim linked'
 
 # link .p10k
 ln -sf $DOTFILES_PATH/zsh/config/p10k.zsh $HOME/.p10k.zsh
