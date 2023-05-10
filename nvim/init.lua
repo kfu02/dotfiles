@@ -20,8 +20,9 @@ vim.opt.rtp:prepend(lazypath)
 vim.cmd([[source ~/.config/nvim/mappings.vim]])
 
 -- toggle LSP diagnostics (warning msgs)
--- Define a variable to track the state of diagnostic messages
-local showDiagnostics = true
+-- (default off)
+vim.diagnostic.disable()
+local showDiagnostics = false
 
 -- Function to toggle diagnostic messages
 function toggleDiagnostics()
