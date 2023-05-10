@@ -227,18 +227,21 @@ require("lazy").setup({
     {
         'hrsh7th/nvim-cmp',
         dependencies = {
+            -- link with LSP
             'neovim/nvim-lspconfig',
             'hrsh7th/cmp-nvim-lsp',
+            -- complete w/ buffer/path/cmdline
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-cmdline',
+            -- autocomplete snippets
             'hrsh7th/cmp-vsnip',
             'hrsh7th/vim-vsnip',
+            "rafamadriz/friendly-snippets",
+            -- install LSP easily
             'williamboman/mason-lspconfig.nvim',
         },
         config = function()
-            -- to create Supertab-like mapping for completion
-            -- (only show auto-completion on <Tab>, scroll options with <Tab>/<S-Tab>)
             local has_words_before = function()
                 unpack = unpack or table.unpack
                 local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -267,24 +270,31 @@ require("lazy").setup({
             },
 
             mapping = cmp.mapping.preset.insert({
-              ["<Tab>"] = cmp.mapping(function(fallback)
-                  if cmp.visible() then
-                    cmp.select_next_item()
-                  elseif vim.fn["vsnip#available"](1) == 1 then
-                    feedkey("<Plug>(vsnip-expand-or-jump)", "")
-                  elseif has_words_before() then
-                    cmp.complete()
-                  else
-                    fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
-                  end
+                -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                
+                -- supertab-like completion
+                -- to create Supertab-like mapping for completion
+                -- (only show auto-completion on <Tab>, scroll options with <Tab>/<S-Tab>)
+                -- (sometimes snippets don't work, hence confirm mapping above)
+                ["<Tab>"] = cmp.mapping(function(fallback)
+                      if cmp.visible() then
+                        cmp.select_next_item()
+                      elseif vim.fn["vsnip#available"](1) == 1 then
+                        feedkey("<Plug>(vsnip-expand-or-jump)", "")
+                      elseif has_words_before() then
+                        cmp.complete()
+                      else
+                        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+                      end
                 end, { "i", "s" }),
 
                 ["<S-Tab>"] = cmp.mapping(function()
-                  if cmp.visible() then
-                    cmp.select_prev_item()
-                  elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-                    feedkey("<Plug>(vsnip-jump-prev)", "")
-                  end
+                      if cmp.visible() then
+                        cmp.select_prev_item()
+                      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+                        feedkey("<Plug>(vsnip-jump-prev)", "")
+                      end
                 end, { "i", "s" }),
             }),
 
