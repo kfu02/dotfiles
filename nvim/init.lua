@@ -303,6 +303,7 @@ require("lazy").setup({
             }),
 
             sources = cmp.config.sources({
+              { name = 'path' },
               { name = 'nvim_lsp' },
               { name = 'vsnip' }, -- For vsnip users.
             }, {
