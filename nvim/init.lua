@@ -19,6 +19,23 @@ vim.opt.rtp:prepend(lazypath)
 -- Import all old vim mappings
 vim.cmd([[source ~/.config/nvim/mappings.vim]])
 
+-- toggle LSP diagnostics (warning msgs)
+-- Define a variable to track the state of diagnostic messages
+local showDiagnostics = true
+
+-- Function to toggle diagnostic messages
+function toggleDiagnostics()
+    if showDiagnostics then
+        vim.diagnostic.disable()
+    else
+        vim.diagnostic.enable()
+    end
+    showDiagnostics = not showDiagnostics
+end
+
+-- Create a keybind to toggle diagnostic messages
+vim.api.nvim_set_keymap('n', '<Leader>d', '<Cmd>lua toggleDiagnostics()<CR>', { noremap = true, silent = true })
+
 -- Install and configure plugins with lazy.nvim
 require("lazy").setup({
     -- vim-sleuth - tpope plugin to auto-indent based on context
