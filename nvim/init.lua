@@ -48,6 +48,8 @@ require("lazy").setup({
         config = function() 
             vim.fn["mkdp#util#install"]()
         end,
+        -- config = "cd app && yarn install",
+        -- TODO: this install don't work
     },
 
     -- git-conflict.nvim - highlight git conflicts and help remove them
@@ -217,7 +219,8 @@ require("lazy").setup({
             require("mason").setup()
             -- TODO: sync with Treesitter's ensure_installed list
             require("mason-lspconfig").setup {
-                ensure_installed = { "lua_ls" },
+                -- TODO: sync with nvim-cmp's list below
+                ensure_installed = { "lua_ls", "pyright" },
             }
         end,
     },
@@ -336,8 +339,12 @@ require("lazy").setup({
             -- Set up lspconfig.
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
             require('lspconfig')['lua_ls'].setup {
-            capabilities = capabilities
+                capabilities = capabilities
             }
+            require('lspconfig')['pyright'].setup {
+                capabilities = capabilities
+            }
+            
         end,
     }, -- end nvim-cmp setup
     
