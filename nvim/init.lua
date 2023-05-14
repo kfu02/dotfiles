@@ -49,8 +49,8 @@ require("lazy").setup({
         config = function() 
             vim.fn["mkdp#util#install"]()
         end,
-        -- config = "cd app && yarn install",
-        -- TODO: this install don't work
+        -- only load on markdown files (takes like 200 ms to load)
+        ft = "markdown",
     },
 
     -- git-conflict.nvim - highlight git conflicts and help remove them
