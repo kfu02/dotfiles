@@ -220,8 +220,7 @@ require("lazy").setup({
             require("mason").setup()
             -- TODO: sync with Treesitter's ensure_installed list
             require("mason-lspconfig").setup {
-                -- TODO: sync with nvim-cmp's list below
-                ensure_installed = { "lua_ls", "pyright" },
+                ensure_installed = { "lua_ls", "pyright", "clangd" },
             }
         end,
     },
@@ -339,13 +338,19 @@ require("lazy").setup({
             })
 
             -- Set up lspconfig.
+            -- From: https://github.com/grammenoudis/LazyNvim/blob/main/lua/completion-cmp/init.lua
+            -- See :help mason-lspconfig-dynamic-server-setup
+            local lspconfig = require('lspconfig')
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
-            require('lspconfig')['lua_ls'].setup {
-                capabilities = capabilities
-            }
-            require('lspconfig')['pyright'].setup {
-                capabilities = capabilities
-            }
+            require('mason-lspconfig').setup_handlers({
+              function(server)
+                lspconfig[server].setup {capabilities = capabilities}
+              end,
+              -- example of custom setup
+              -- ['tsserver'] = function()
+              --   lspconfig.tsserver.setup({settings = {completions = {completeFunctionCalls = true}}})
+              -- end
+            })
             
         end,
     }, -- end nvim-cmp setup
