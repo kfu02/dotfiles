@@ -132,26 +132,6 @@ require("lazy").setup({
         dependencies = {"tyru/open-browser.vim"},
     },
 
-    -- filetype.nvim - make filetype detection faster, allow extension changes 
-    -- https://github.com/nathom/filetype.nvim
-    {'nathom/filetype.nvim',
-        config = function()
-            require("filetype").setup({
-                overrides = {
-                    extensions = {
-                        -- set filetype of .launch to .xml
-                        launch = "xml",
-                    },
-
-                    shebang = {
-                        -- Set the filetype of files with a dash shebang to sh
-                        dash = "sh",
-                    },
-                },
-            })
-        end,
-    },
-        
     -- vim-tmux-navigator - switch between vim panes and tmux tabs seamlessly
     -- https://github.com/christoomey/vim-tmux-navigator
     {"christoomey/vim-tmux-navigator", 
