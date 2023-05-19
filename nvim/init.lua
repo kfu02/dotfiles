@@ -251,6 +251,27 @@ require("lazy").setup({
 
             local cmp = require'cmp'
 
+            -- on keybind (see vim.keymap.set below), toggle autocompletion globally
+            local autoCmpOn = true
+            function toggleAutoCmp()
+              if autoCmpOn then
+                cmp.setup({
+                  completion = {
+                    autocomplete = { require('cmp.types').cmp.TriggerEvent.TextChanged }
+                  }
+                })
+              else
+                cmp.setup({
+                  completion = {
+                    autocomplete = false
+                  }
+                })
+              end
+              autoCmpOn = not autoCmpOn
+            end
+
+            vim.keymap.set('n', '<Leader>ac', '<Cmd>lua toggleAutoCmp()<CR>', { noremap = true })
+
             cmp.setup({
             snippet = {
               expand = function(args)
