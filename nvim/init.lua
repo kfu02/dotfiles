@@ -34,11 +34,25 @@ function toggleDiagnostics()
     showDiagnostics = not showDiagnostics
 end
 
--- Create a keybind to toggle diagnostic messages
-vim.api.nvim_set_keymap('n', '<Leader>d', '<Cmd>lua toggleDiagnostics()<CR>', { noremap = true, silent = true })
+-- toggle diagnostics on :ToggleDiagnostics or keybind
+vim.cmd('command ToggleDiagnostics lua toggleDiagnostics()')
+vim.keymap.set('n', '<Leader>td', '<Cmd>lua toggleDiagnostics()<CR>', { noremap = true, silent = true })
 
 -- Install and configure plugins with lazy.nvim
 require("lazy").setup({
+    {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("which-key").setup({
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      })
+    end,
+    },
+
     -- vim-sleuth - tpope plugin to auto-indent based on context
     -- https://github.com/tpope/vim-sleuth
     {'tpope/vim-sleuth'},
