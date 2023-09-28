@@ -153,14 +153,17 @@ require("lazy").setup({
 
     -- oil.nvim - better file tree navigation (improved tpope's vinegar.vim)
     -- https://github.com/stevearc/oil.nvim
+    -- {
+    -- 'stevearc/oil.nvim',
+    -- dependencies = { "nvim-tree/nvim-web-devicons" },
+    -- config = function()
+    --     vim.opt.conceallevel = 0
+    --     require("oil").setup()
+    --     vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
+    -- end,
+    -- },
     {
-    'stevearc/oil.nvim',
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-        vim.opt.conceallevel = 0
-        require("oil").setup()
-        vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
-    end,
+        "tpope/vim-vinegar",
     },
     
     -- github-nvim-theme - clone of GitHub's colors
