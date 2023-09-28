@@ -40,6 +40,13 @@ vim.keymap.set('n', '<Leader>td', '<Cmd>lua toggleDiagnostics()<CR>', { noremap 
 
 -- Install and configure plugins with lazy.nvim
 require("lazy").setup({
+    -- GitHub Copilot
+    -- (requires Node.js)
+    {
+        "github/copilot.vim",
+    },
+
+    -- which-key - after pressing a key and waiting N seconds, show what possible keys there are to press and what those combos do
     {
     "folke/which-key.nvim",
     config = function()
