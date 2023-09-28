@@ -23,7 +23,7 @@ alias ....='cd ../../..'
 # https://devconnected.com/how-to-set-upstream-branch-on-git/
 alias gpu='git push -u origin HEAD'
 
-# go to dotfiles + open nvim to edit without leaving pwd
+# go to dotfiles + open nvim to edit without leaving cwd
 alias dots="(cd ~/.dotfiles && nvim .)"
 
 # no need to add -t for tmux a
