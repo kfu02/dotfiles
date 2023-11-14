@@ -40,6 +40,15 @@ vim.keymap.set('n', '<Leader>td', '<Cmd>lua toggleDiagnostics()<CR>', { noremap 
 
 -- Install and configure plugins with lazy.nvim
 require("lazy").setup({
+    -- nvim-ufo
+    -- better folding
+    {
+        "kevinhwang91/nvim-ufo",
+        dependencies = { 'kevinhwang91/promise-async' },
+        config = function()
+            require("ufo").setup({})
+        end,
+    },
     -- GitHub Copilot
     -- (requires Node.js)
     {
@@ -405,7 +414,7 @@ require("lazy").setup({
             require'nvim-treesitter.configs'.setup {
               -- keep these installed
               -- :TSInstallInfo to check
-              ensure_installed = { "cpp", "python", "c", "lua", "vim" },
+              ensure_installed = {"comment", "cpp", "python", "c", "lua", "vim" },
 
               -- more syntax highlights
               highlight = {
