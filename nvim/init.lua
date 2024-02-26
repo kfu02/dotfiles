@@ -314,7 +314,7 @@ require("lazy").setup({
             },
 
             completion = {
-                autocomplete = false,
+                autocomplete = { require('cmp.types').cmp.TriggerEvent.TextChanged }
             },
 
             mapping = cmp.mapping.preset.insert({
