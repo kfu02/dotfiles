@@ -6,6 +6,15 @@
 #
 ################################################################################
 
+# git aliases
+alias gd='git diff'
+alias gs='git status'
+alias gco='git checkout'
+alias gc='git commit'
+alias gr='git restore'
+alias gpu='git push -u origin HEAD'
+alias ga='git add'
+
 # python aliases
 # alias python='python3'
 # alias pip='python -m pip'
@@ -16,12 +25,6 @@ alias rm='rm -i'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-
-# prevent copy-pasting this
-#    git push --set-upstream origin <branch-name>
-# when pushing a new branch
-# https://devconnected.com/how-to-set-upstream-branch-on-git/
-alias gpu='git push -u origin HEAD'
 
 # go to dotfiles + open nvim to edit without leaving cwd
 alias dots="(cd ~/.dotfiles && nvim .)"
